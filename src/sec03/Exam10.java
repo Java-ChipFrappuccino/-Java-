@@ -16,6 +16,7 @@ public class Exam10 {
             arr.add(sc.nextInt());
         }
         exam10.solution(arr);
+        System.out.println( 48 / 2(9 +3));
     }
 
     public void solution(List<Integer> arr) {
