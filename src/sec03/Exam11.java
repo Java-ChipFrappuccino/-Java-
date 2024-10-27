@@ -38,13 +38,36 @@ public class Exam11 {
         for (int i = 0; i < arr.length; i++) {
             original[i] = Arrays.copyOf(arr[i], arr[i].length);
         }
-
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i][0] == original[i][j]) {
-
+        int studentCount = 0;
+        int sameClassCount = 0;
+        int maxSameClassCount = 0;
+        int reader = 0;
+        while (studentCount < arr.length) {
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < arr.length; j++) {
+                    if (arr[j][i] == 100) {
+                        continue;
+                    }
+                    if (arr[j] == original[studentCount]) {
+                        continue;
+                    }
+                    if (arr[j][i] == original[studentCount][i]) {
+                        sameClassCount++;
+                        Arrays.fill(arr[j], 100);
+                    }
                 }
             }
+            if (sameClassCount > maxSameClassCount) {
+                maxSameClassCount = sameClassCount;
+                reader = studentCount + 1;
+            }
+            studentCount++;
+            sameClassCount = 0;
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = Arrays.copyOf(original[i], original[i].length);
+            }
         }
+        System.out.println();
+        System.out.printf("반장은 %d번 학생입니다!",reader);
     }
 }
