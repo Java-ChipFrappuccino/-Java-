@@ -19,11 +19,6 @@ public class Exam06 {
     }
 
     public void solution(List<Integer> arr) {
-        System.out.print(arr.get(0) + " ");
-        for (int i = 1; i < arr.size(); i++) {
-            if (arr.get(i) > arr.get(i - 1)) {
-                System.out.print(arr.get(i) + " ");
-            }
-        }
+
     }
 }
