@@ -20,5 +20,6 @@ public class Exam06 {
 
     public void solution(List<Integer> arr) {
 
+
     }
 }
