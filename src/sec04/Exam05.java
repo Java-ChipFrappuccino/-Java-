@@ -13,23 +13,40 @@ public class Exam05 {
         int num = sc.nextInt();
 
         exam.solution(num);
+        int n = 5;     // n의 초기값은 5
+        n = 3 + n++;
+        System.out.println();
+        System.out.println(n);
     }
-
+    // two pointers 기법
     public void solution(int num) {
-        int sum = 0 , count = 0 , left = 0 , right = 0;
-        for (int i = 1; i <= num / 2 + 1; i++) {
-            sum += i;
-            if (sum == num) {
+        int count = 0;
+        int sum = 0;
+        int left = 1;
+
+        for (int right = 1; right <= num / 2 + 1; right++) {
+            sum += right; // 오른쪽 포인터를 증가하면서 합을 추가
+
+            while (sum > num) { // 합이 num을 초과하면 왼쪽 포인터를 이동하여 합을 줄임
+                sum -= left++;
+            }
+
+            if (sum == num) { // 합이 num과 같으면 경우의 수를 증가
                 count++;
-            } else if (sum > num) {
-                while (sum > num) {
-                    sum -= left++;
-                    if (sum == num) {
-                        count++;
-                    }
-                }
             }
         }
+
         System.out.println(count);
     }
+    // 수학적 접근방식
+//    public int solution(int n){
+//        int answer=0, cnt=1;
+//        n--;
+//        while(n>0){
+//            cnt++;
+//            n=n-cnt;
+//            if(n%cnt==0) answer++;
+//        }
+//        return answer;
+//    }
 }
