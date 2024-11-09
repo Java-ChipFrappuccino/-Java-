@@ -1,11 +1,12 @@
 package sec06;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
-// 1. 올바른 괄호
-public class Exam01 {
+// 4. 후위식 연산 (postfix)
+public class Exam04 {
     public static void main(String[] args) {
-        Exam01 exam = new Exam01();
+        Exam04 exam = new Exam04();
 
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();

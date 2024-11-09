@@ -2,7 +2,7 @@ package sec04;
 
 import java.util.*;
 
-// 2. 공통원소구하기
+// 2. 공통원소구하기 (two pointers algorithm)
 public class Exam02 {
     public static void main(String[] args) {
         Exam02 exam = new Exam02();

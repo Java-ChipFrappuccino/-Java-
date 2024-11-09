@@ -2,7 +2,7 @@ package sec05;
 
 import java.util.*;
 
-// 5. K번째 큰 수
+// 5. K번째 큰 수 (TreeSet)
 public class Exam05 {
     public static void main(String[] args) {
         Exam05 exam = new Exam05();

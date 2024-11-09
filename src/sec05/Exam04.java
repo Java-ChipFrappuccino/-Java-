@@ -2,7 +2,7 @@ package sec05;
 
 import java.util.*;
 
-// 4. 모든 아나그램 찾기
+// 4. 모든 아나그램 찾기 (Hash, sliding window : 시간복잡도 O(n))
 public class Exam04 {
     public static void main(String[] args) {
         Exam04 exam = new Exam04();

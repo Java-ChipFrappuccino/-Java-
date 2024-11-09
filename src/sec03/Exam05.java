@@ -2,7 +2,7 @@ package sec03;
 
 import java.util.Scanner;
 
-// 5. 소수(에라토스테네스 체)
+// 5. 소수 (에라토스테네스 체)
 public class Exam05 {
     public static void main(String[] args) {
         Exam05 exam05 = new Exam05();

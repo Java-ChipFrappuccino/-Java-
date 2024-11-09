@@ -1,11 +1,12 @@
 package sec06;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
-// 1. 올바른 괄호
-public class Exam01 {
+// 3. 크레인 인형뽑기(카카오)
+public class Exam03 {
     public static void main(String[] args) {
-        Exam01 exam = new Exam01();
+        Exam03 exam = new Exam03();
 
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();

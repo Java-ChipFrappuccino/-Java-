@@ -1,11 +1,12 @@
 package sec06;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
-// 1. 올바른 괄호
-public class Exam01 {
+// 7. 교육과정설계
+public class Exam07 {
     public static void main(String[] args) {
-        Exam01 exam = new Exam01();
+        Exam07 exam = new Exam07();
 
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();

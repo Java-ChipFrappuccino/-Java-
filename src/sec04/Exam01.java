@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-// 1. 두 배열 합치기
+// 1. 두 배열 합치기 (two pointers algorithm)
 public class Exam01 {
     public static void main(String[] args) {
         Exam01 exam = new Exam01();

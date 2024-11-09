@@ -2,7 +2,7 @@ package sec05;
 
 import java.util.*;
 
-// 1. 학급 회장(해쉬)
+// 1. 학급 회장(해쉬) (HashMap)
 public class Exam01 {
     public static void main(String[] args) {
         Exam01 exam = new Exam01();

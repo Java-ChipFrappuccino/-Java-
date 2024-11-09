@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// 3. 최대 매출
+// 3. 최대 매출 (Sliding window)
 public class Exam03 {
     public static void main(String[] args) {
         Exam03 exam = new Exam03();

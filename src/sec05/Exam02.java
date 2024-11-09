@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-// 2. 아나그램
+// 2. 아나그램 (HashMap)
 public class Exam02 {
     public static void main(String[] args) {
         Exam02 exam = new Exam02();

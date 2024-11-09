@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 
-// 4. 연속부분수열
+// 4. 연속부분수열 (복합적 문제)
 public class Exam04 {
     public static void main(String[] args) {
         Exam04 exam = new Exam04();

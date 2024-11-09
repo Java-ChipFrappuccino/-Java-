@@ -2,7 +2,7 @@ package sec05;
 
 import java.util.*;
 
-// 3. 매출액의 종류
+// 3. 매출액의 종류 (Hash, sliding window)
 public class Exam03 {
     public static void main(String[] args) {
         Exam03 exam = new Exam03();

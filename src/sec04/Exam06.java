@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-// 6. 최대 길이 연속부분수열
+// 6. 최대 길이 연속부분수열 (복합적 문제)
 public class Exam06 {
     public static void main(String[] args) {
         Exam06 exam = new Exam06();
