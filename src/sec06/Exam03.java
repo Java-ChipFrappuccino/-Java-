@@ -1,5 +1,7 @@
 package sec06;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -9,31 +11,43 @@ public class Exam03 {
         Exam03 exam = new Exam03();
 
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-
-        exam.solution(str);
-    }
-
-    public void solution(String str) {
-        String answer = "YES";
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                stack.push(str.charAt(i));
-            } else {
-                if (stack.isEmpty()) {
-                    answer = "NO";
-                    System.out.println(answer);
-                    return;
-                }
-                stack.pop();
+        int n=sc.nextInt();
+        int[][] board=new int[n][n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                board[i][j]=sc.nextInt();
             }
         }
-        if (!stack.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-            return;
+        int m=sc.nextInt();
+        int[] moves=new int[m];
+        for(int i=0; i<m; i++) moves[i]=sc.nextInt();
+        exam.solution(board , moves);
+    }
+
+    public void solution(int[][] board , int[] moves) {
+        Stack<Integer> stack=new Stack<>();
+        int height = 0;
+        int PopCount = 0;
+        for(int i = 0; i < moves.length; i++){
+            height = 0;
+            while (board[height][moves[i] - 1] == 0) {
+                height++;
+                if (height == board.length) {
+                    height = 0;
+                    break;
+                }
+            }
+            if (height == 0) {
+                continue;
+            }
+            stack.push(board[height][moves[i] - 1]);
+            if (stack.size() > 1 && stack.peek() == board[height][moves[i] - 1]) {
+                PopCount += 2;
+                stack.pop();
+                stack.pop();
+            }
+            board[height][moves[i] - 1] = 0;
         }
-        System.out.println(answer);
+        System.out.println(PopCount);
     }
 }
