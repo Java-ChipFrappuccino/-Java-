@@ -15,25 +15,14 @@ public class Exam04 {
     }
 
     public void solution(String str) {
-        String answer = "YES";
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                stack.push(str.charAt(i));
+        int answer = 0;
+        Stack<Integer> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            if (Character.isDigit(c)) {
+                stack.push(Character.getNumericValue(c));
             } else {
-                if (stack.isEmpty()) {
-                    answer = "NO";
-                    System.out.println(answer);
-                    return;
-                }
-                stack.pop();
+
             }
         }
-        if (!stack.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-            return;
-        }
-        System.out.println(answer);
     }
 }
