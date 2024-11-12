@@ -1,7 +1,6 @@
 package sec06;
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 // 8. 응급실
 public class Exam08 {
@@ -9,31 +8,43 @@ public class Exam08 {
         Exam08 exam = new Exam08();
 
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
+        int[] n = new int[sc.nextInt()];
+        int m = sc.nextInt();
+        Random rand = new Random();
+        for (int i = 0; i < n.length; i++) {
+            n[i] = rand.nextInt(51) + 50;
+            System.out.print(n[i] + " ");
+        }
 
-        exam.solution(str);
+        exam.solution(n , m);
     }
 
-    public void solution(String str) {
-        String answer = "YES";
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                stack.push(str.charAt(i));
-            } else {
-                if (stack.isEmpty()) {
-                    answer = "NO";
-                    System.out.println(answer);
-                    return;
+    public void solution(int[] n, int m) {
+        Queue<Map<Integer, Integer>> q = new LinkedList<>();
+        int count = 0;
+        for (int i = 0; i < n.length; i++) {
+            Map<Integer, Integer> map1 = new HashMap<>();
+            map1.put(i, n[i]);
+            q.offer(map1);
+        }
+        while (!q.isEmpty()) {
+            Map<Integer, Integer> map2 = q.poll();
+            int danger = map2.values().iterator().next();
+//            for (int i = 0; i < q.size(); i++) {
+//                if (danger == map2.get(i)) {}
+//            }
+            for (Map<Integer, Integer> entry : q) {
+                if (entry.values().iterator().next() > danger) {
+                    q.offer(map2);
+                    break;
                 }
-                stack.pop();
+
+            }
+            count++;
+            if (map2.size() == m) {
+                System.out.println(count);
+                break;
             }
         }
-        if (!stack.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-            return;
-        }
-        System.out.println(answer);
     }
 }

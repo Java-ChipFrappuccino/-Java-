@@ -1,5 +1,7 @@
 package sec06;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -9,31 +11,24 @@ public class Exam07 {
         Exam07 exam = new Exam07();
 
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
+        String a = sc.nextLine();
+        String b = sc.nextLine();
 
-        exam.solution(str);
+        exam.solution(a, b);
     }
 
-    public void solution(String str) {
-        String answer = "YES";
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                stack.push(str.charAt(i));
-            } else {
-                if (stack.isEmpty()) {
-                    answer = "NO";
-                    System.out.println(answer);
+    public void solution(String a, String b) {
+        Queue<Character> q = new LinkedList<>();
+        for (int i = 0; i < a.length(); i++) q.offer(a.charAt(i));
+        for (char c : b.toCharArray()) {
+            if (q.peek() == c) {
+                q.poll();
+                if (q.isEmpty()) {
+                    System.out.println("YES");
                     return;
                 }
-                stack.pop();
             }
         }
-        if (!stack.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-            return;
-        }
-        System.out.println(answer);
+        System.out.println("NO");
     }
 }

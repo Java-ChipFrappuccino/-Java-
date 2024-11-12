@@ -15,24 +15,19 @@ public class Exam05 {
     }
 
     public void solution(String str) {
-        String answer = "YES";
         Stack<Character> stack = new Stack<>();
+        int answer = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '(') {
                 stack.push(str.charAt(i));
             } else {
-                if (stack.isEmpty()) {
-                    answer = "NO";
-                    System.out.println(answer);
-                    return;
-                }
                 stack.pop();
+                if (str.charAt(i - 1) == '(') {
+                    answer += stack.size();
+                } else {
+                    answer++;
+                }
             }
-        }
-        if (!stack.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-            return;
         }
         System.out.println(answer);
     }

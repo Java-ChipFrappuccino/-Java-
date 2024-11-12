@@ -15,14 +15,41 @@ public class Exam04 {
     }
 
     public void solution(String str) {
-        int answer = 0;
         Stack<Integer> stack = new Stack<>();
         for (char c : str.toCharArray()) {
             if (Character.isDigit(c)) {
                 stack.push(Character.getNumericValue(c));
-            } else {
-
+            } else if (c == '+') {
+                stack.push(stack.pop() + stack.pop());
+            } else if (c == '-') {
+                int temp = stack.pop();
+                stack.push(stack.pop() - temp);
+            } else if (c == '*') {
+                stack.push(stack.pop() * stack.pop());
+            } else if (c == '/') {
+                int temp = stack.pop();
+                stack.push(stack.pop() / temp);
             }
         }
+
+//        for (char c : str.toCharArray()) {
+//            if (Character.isDigit(c)) {
+//                stack.push(Character.getNumericValue(c));
+//            } else {
+//                int rt = stack.pop();
+//                int lt = stack.pop();
+//                if (c == '+') {
+//                    stack.push(lt + rt);
+//                } else if (c == '-') {
+//                    stack.push(lt - rt);
+//                } else if (c == '*') {
+//                    stack.push(lt * rt);
+//                } else if (c == '/') {
+//                    stack.push(lt / rt);
+//                }
+//            }
+//        }
+
+        System.out.println(stack.pop());
     }
 }
