@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// 1. 학급 회장(해쉬)
+// 1. 선택정렬
 public class Exam01 {
     public static void main(String[] args) {
         Exam01 exam = new Exam01();
