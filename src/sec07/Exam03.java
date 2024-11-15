@@ -9,31 +9,14 @@ public class Exam03 {
         Exam03 exam = new Exam03();
 
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
+        int num = sc.nextInt();
+        int[] arr = new int[num];
+        for (int i = 0; i < num; i++) arr[i] = sc.nextInt();
 
-        exam.solution(str);
+        exam.solution(arr);
     }
 
-    public void solution(String str) {
-        String answer = "YES";
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                stack.push(str.charAt(i));
-            } else {
-                if (stack.isEmpty()) {
-                    answer = "NO";
-                    System.out.println(answer);
-                    return;
-                }
-                stack.pop();
-            }
-        }
-        if (!stack.isEmpty()) {
-            answer = "NO";
-            System.out.println(answer);
-            return;
-        }
-        System.out.println(answer);
+    public void solution(int[] arr) {
+
     }
 }
