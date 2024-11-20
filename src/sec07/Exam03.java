@@ -20,6 +20,8 @@ public class Exam03 {
     }
 
     public void solution(List<Integer> arr) {
+        for (int i = 0; i < arr.size(); i++) {
 
+        }
     }
 }
